@@ -2,9 +2,21 @@
 
 ##What is this?##
 
+Currently, DOE fuel updates are provided by the EIA as an RSS feed, "facepalm here", and they don't even perform the RSS correctly.  So, in an effort to right this wrong, which the government obviously isn't going to do anytime soon, I have created a wrapper application that does all of the scraping for you and then returns the data in a web friendly format.  Current supported formats are JSON and XML, and I am not opposed to adding more.
+
 ##Running##
 
+To run the application, you will need ruby 2, rails 3 and postgres installed on your local machine.  Clone the repository then run
+
+    bundle install
+
+followed by
+
+    rails s
+
 ##Contributing##
+
+To contribute, fork the application into your local Github account.  Make your changes then submit a pull request.  
 
 ##License##
 The MIT License (MIT)
