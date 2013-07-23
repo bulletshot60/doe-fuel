@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715135247) do
+ActiveRecord::Schema.define(:version => 20130723132728) do
 
   create_table "diesel_prices", :force => true do |t|
     t.float    "us_national_average"
@@ -45,6 +45,24 @@ ActiveRecord::Schema.define(:version => 20130715135247) do
     t.date     "effective_date"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "colorado"
+    t.string   "florida"
+    t.string   "massachusetts"
+    t.string   "minnesota"
+    t.string   "new_york"
+    t.string   "ohio"
+    t.string   "texas"
+    t.string   "washington"
+    t.string   "boston"
+    t.string   "chicago"
+    t.string   "cleveland"
+    t.string   "denver"
+    t.string   "houston"
+    t.string   "los_angeles"
+    t.string   "miami"
+    t.string   "new_york_city"
+    t.string   "san_francisco"
+    t.string   "seattle"
   end
 
 end
