@@ -10,7 +10,7 @@ The application checks for updates each Tuesday @ 12:00 AM (EST).  For the rare 
 
 ##Is this application live?##
 
-Yes.  It can be found @ http://doefuel.herokuapp.com, with the fuel price API located @ http://doefuel.herokuapp.com/prices/get(.json | .xml).
+Yes.  It can be found @ http://doefuel.herokuapp.com, with the fuel price API located @ http://doefuel.herokuapp.com/prices/get.json | http://doefuel.herokuapp.com/prices/get.xml.
 
 ##Running##
 
