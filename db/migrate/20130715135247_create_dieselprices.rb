@@ -10,7 +10,6 @@ class CreateDieselprices < ActiveRecord::Migration
     		t.float :gulf_coast
     		t.float :rocky_mountains
     		t.float :west_coast
-    		t.float :west_coast_less_california
     		t.float :california
             t.date  :effective_date
 
