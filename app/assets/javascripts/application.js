@@ -21,4 +21,6 @@
 //= require jquery.tagsinput
 //= require jquery.placeholder
 //= require jquery.stacktable
+//= require highcharts
+//= require highcharts/highcharts-more
 //= require_tree .
