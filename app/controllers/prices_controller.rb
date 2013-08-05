@@ -3,7 +3,8 @@ require 'date'
 
 class PricesController < ApplicationController
 	def index
-
+		@regular = get_regular(params["date"])
+		@diesel = get_diesel(params["date"])
 	end
 
 	def trends

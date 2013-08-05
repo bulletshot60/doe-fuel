@@ -1,5 +1,275 @@
 <div class="container">
 	<div class="hero-unit">
-		
+		<div class="pull-right">
+			<div class="input-prepend input-datepicker">
+              <img src="/assets/Calendar@2x.png" width="40"/>
+              <input type="text" class="span2 datepicker" id="datepicker">
+            </div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="pull-left span5">
+			<h5>Regular Fuel Prices by Region</h5>
+			<div class="span3">
+				US National Average
+			</div>
+			<div class="span1">
+				<%= @regular.us_national_average %>
+			</div>
+			<div class="span3">
+				East Coast
+			</div>
+			<div class="span1">
+				<%= @regular.east_coast %>
+			</div>
+			<div class="span1">
+			</div>
+			<div class="span2">
+				New England
+			</div>
+			<div class="span1">
+				<%= @regular.new_england %>
+			</div>
+			<div class="span1">
+			</div>
+			<div class="span2">
+				Central Atlantic
+			</div>
+			<div class="span1">
+				<%= @regular.central_atlantic %>
+			</div>
+			<div class="span1">
+			</div>
+			<div class="span2">
+				Lower Atlantic
+			</div>
+			<div class="span1">
+				<%= @regular.lower_atlantic %>
+			</div>
+			<div class="span3">
+				Midwest
+			</div>
+			<div class="span1">
+				<%= @regular.midwest %>
+			</div>
+			<div class="span3">
+				Gulf Coast
+			</div>
+			<div class="span1">
+				<%= @regular.gulf_coast %>
+			</div>
+			<div class="span3">
+				Rocky Mountains
+			</div>
+			<div class="span1">
+				<%= @regular.rocky_mountains %>
+			</div>
+			<div class="span3">
+				West Coast
+			</div>
+			<div class="span1">
+				<%= @regular.west_coast %>
+			</div>
+			<div class="span1">
+			</div>
+			<div class="span2">
+				California
+			</div>
+			<div class="span1">
+				<%= @regular.california %>
+			</div>
+		</div>
+		<div class="pull-right span5">
+			<h5>Regular Fuel Prices by State</h5>
+			<div class="span3">
+				Boston
+			</div>
+			<div class="span1">
+				<%= @regular.boston %>
+			</div>
+			<div class="span3">
+				Chicago
+			</div>
+			<div class="span1">
+				<%= @regular.chicago %>
+			</div>
+			<div class="span3">
+				Cleveland
+			</div>
+			<div class="span1">
+				<%= @regular.cleveland %>
+			</div>
+			<div class="span3">
+				Denver
+			</div>
+			<div class="span1">
+				<%= @regular.denver %>
+			</div>
+			<div class="span3">
+				Houston
+			</div>
+			<div class="span1">
+				<%= @regular.houston %>
+			</div>
+			<div class="span3">
+				Los Angeles
+			</div>
+			<div class="span1">
+				<%= @regular.los_angeles %>
+			</div>
+			<div class="span3">
+				Miami
+			</div>
+			<div class="span1">
+				<%= @regular.miami %>
+			</div>
+			<div class="span3">
+				New York City
+			</div>
+			<div class="span1">
+				<%= @regular.new_york_city %>
+			</div>
+			<div class="span3">
+				San Francisco
+			</div>
+			<div class="span1">
+				<%= @regular.san_francisco %>
+			</div>
+			<div class="span3">
+				Seattle
+			</div>
+			<div class="span1">
+				<%= @regular.seattle %>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<hr/>
+		<div class="pull-left span5">
+			<h5>Regular Fuel Prices by City</h5>
+			<div class="span3">
+				Colorado
+			</div>
+			<div class="span1">
+				<%= @regular.colorado %>
+			</div>
+			<div class="span3">
+				Florida
+			</div>
+			<div class="span1">
+				<%= @regular.florida %>
+			</div>
+			<div class="span3">
+				Massachusetts
+			</div>
+			<div class="span1">
+				<%= @regular.massachusetts %>
+			</div>
+			<div class="span3">
+				Minnesota
+			</div>
+			<div class="span1">
+				<%= @regular.minnesota %>
+			</div>
+			<div class="span3">
+				New York
+			</div>
+			<div class="span1">
+				<%= @regular.new_york %>
+			</div>
+			<div class="span3">
+				Ohio
+			</div>
+			<div class="span1">
+				<%= @regular.ohio %>
+			</div>
+			<div class="span3">
+				Texas
+			</div>
+			<div class="span1">
+				<%= @regular.texas %>
+			</div>
+			<div class="span3">
+				Washington
+			</div>
+			<div class="span1">
+				<%= @regular.washington %>
+			</div>
+		</div>
+		<div class="pull-right span5">
+			<h5>Diesel Fuel Prices</h5>
+			<div class="span3">
+				US National Average
+			</div>
+			<div class="span1">
+				<%= @diesel.us_national_average %>
+			</div>
+			<div class="span3">
+				East Coast
+			</div>
+			<div class="span1">
+				<%= @diesel.east_coast %>
+			</div>
+			<div class="span1">
+			</div>
+			<div class="span2">
+				New England
+			</div>
+			<div class="span1">
+				<%= @diesel.new_england %>
+			</div>
+			<div class="span1">
+			</div>
+			<div class="span2">
+				Central Atlantic
+			</div>
+			<div class="span1">
+				<%= @diesel.central_atlantic %>
+			</div>
+			<div class="span1">
+			</div>
+			<div class="span2">
+				Lower Atlantic
+			</div>
+			<div class="span1">
+				<%= @diesel.lower_atlantic %>
+			</div>
+			<div class="span3">
+				Midwest
+			</div>
+			<div class="span1">
+				<%= @diesel.midwest %>
+			</div>
+			<div class="span3">
+				Gulf Coast
+			</div>
+			<div class="span1">
+				<%= @diesel.gulf_coast %>
+			</div>
+			<div class="span3">
+				Rocky Mountains
+			</div>
+			<div class="span1">
+				<%= @diesel.rocky_mountains %>
+			</div>
+			<div class="span3">
+				West Coast
+			</div>
+			<div class="span1">
+				<%= @diesel.west_coast %>
+			</div>
+			<div class="span1">
+			</div>
+			<div class="span2">
+				California
+			</div>
+			<div class="span1">
+				<%= @diesel.california %>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<hr/>
+		<div class="pull-right">
+			<small>Effective: <%= @regular.effective_date %></small>
+		</div>
+		<div class="clearfix"></div>
 	</div>
 </div>
