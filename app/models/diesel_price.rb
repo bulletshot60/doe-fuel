@@ -33,6 +33,10 @@ class DieselPrice < ActiveRecord::Base
   	  d.effective_date = date
 
   	  d.save!
+
+      return true
   	end
+
+    return false
   end
 end

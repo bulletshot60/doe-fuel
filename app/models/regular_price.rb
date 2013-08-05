@@ -29,7 +29,7 @@ class RegularPrice < ActiveRecord::Base
   	  d.gulf_coast = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Gulf\s+Coast/).first.first
   	  d.rocky_mountains = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Rocky\s+Mountain/).first.first
   	  d.west_coast = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+West\s+Coast/).first.first
-  	   d.california = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+California/).first.first
+  	  d.california = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+California/).first.first
       d.colorado = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Colorado/).first.first
       d.florida = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Florida/).first.first
       d.massachusetts = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Massachusetts/).first.first
@@ -52,6 +52,10 @@ class RegularPrice < ActiveRecord::Base
 	    d.effective_date = date
 
   	  d.save!
+
+      return true
   	end
+
+    return false
   end
 end
