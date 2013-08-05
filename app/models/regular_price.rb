@@ -16,8 +16,8 @@ class RegularPrice < ActiveRecord::Base
       prices = x.content
   	end
 
-  	if self.count == 0 || date > self.last.effective_date 
-  	  RegularPrice.delete_all
+  	if self.count == 0 || date > self.order("effective_date").last.effective_date 
+  	  self.order("effective_date").first.delete!
 
   	  d = self.new
   	  d.us_national_average = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+U\.S\./).first.first

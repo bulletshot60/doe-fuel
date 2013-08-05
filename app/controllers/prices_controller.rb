@@ -5,6 +5,26 @@ class PricesController < ApplicationController
 
 	end
 
+	def trends
+
+	end
+
+	def api
+
+	end
+
+	def weekly_updates
+
+	end
+
+	def sign_up
+
+	end
+
+	def success
+
+	end
+
 	def get
 		respond_to do |format|
 			format.html { redirect_to :index }
