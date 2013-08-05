@@ -17,7 +17,7 @@ class DieselPrice < ActiveRecord::Base
   	end
 
   	if self.count == 0 || date > self.order("effective_date").last.effective_date
-  	  self.order("effective_date").first.delete!
+  	  self.order("effective_date").first.delete
 
   	  d = self.new
   	  d.us_national_average = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+U\.S\./).last.first
