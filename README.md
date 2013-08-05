@@ -4,6 +4,14 @@
 
 Currently, DOE fuel updates are provided by the EIA as an RSS feed, "facepalm here", and they don't even perform the RSS correctly.  So, in an effort to right this wrong, which the government obviously isn't going to do anytime soon, I have created a wrapper application that does all of the scraping for you and then returns the data in a web friendly format.  Current supported formats are JSON and XML, and I am not opposed to adding more.
 
+##When does the API update?##
+
+The application checks for updates each Tuesday @ 12:00 AM (EST).  For the rare occasion when the DOE releases updates on Tuesday, the API will update Wednesday @ 12:00 AM (EST).
+
+##Is this application live?##
+
+Yes.  It can be found @ http://doefuel.herokuapp.com, with the fuel price API located @ http://doefuel.herokuapp.com/prices/get.json | http://doefuel.herokuapp.com/prices/get.xml.
+
 ##Running##
 
 To run the application, you will need ruby 2, rails 3 and postgres installed on your local machine.  Clone the repository then run
