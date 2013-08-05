@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DoeFuel</title>
+  <title>DOE Fuel App</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="background-color: #3498DB;">
 
-<%= yield %>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<div class="pull-left">
+					<a href="/" class="brand">DOE Fuel App</a>
+				</div>
+				<ul class="nav">
+					<li>
+						<a href="/prices">Prices</a>
+						<ul>
+							<li><a href="/prices">Prices</a></li>
+							<li><a href="/prices/trends">Trends</a></li>
+							<li><a href="/prices/api">API</a></li>
+						</ul>
+					</li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div style="margin-top: 45px;"></div>
+	<%= yield %>
 
 </body>
 </html>
