@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723132728) do
+ActiveRecord::Schema.define(:version => 20130806121333) do
 
   create_table "diesel_prices", :force => true do |t|
     t.float    "us_national_average"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(:version => 20130723132728) do
     t.float    "new_york_city"
     t.float    "san_francisco"
     t.float    "seattle"
+  end
+
+  create_table "stats", :force => true do |t|
+    t.integer  "count"
+    t.string   "controller"
+    t.string   "action"
+    t.string   "message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

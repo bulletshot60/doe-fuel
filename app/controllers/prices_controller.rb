@@ -2,25 +2,25 @@ require 'json'
 require 'date'
 
 class PricesController < ApplicationController
+	include StatlyHelper
+
 	def index
+		stat("prices", "index", "page_view")
+
 		@regular = get_regular(params["date"])
 		@diesel = get_diesel(params["date"])
 	end
 
 	def trends
-
+		stat("prices", "trends", "page_view")
 	end
 
 	def api
-
+		stat("prices", "api", "page_view")
 	end
 
 	def weekly_updates
-
-	end
-
-	def sign_up
-
+		stat("prices", "weekly_updates", "page_view")
 	end
 
 	def success
@@ -31,6 +31,7 @@ class PricesController < ApplicationController
 		respond_to do |format|
 			format.html { redirect_to :index }
 			format.xml { 
+				stat("prices", "get", "api_xml")
 				begin
 					render :xml => { 
 						:regular => get_regular(params["date"]), 
@@ -41,6 +42,7 @@ class PricesController < ApplicationController
 				end
 			}
 			format.json { 
+				stat("prices", "get", "api_json")
 				begin
 					render :json => { 
 						:regular => get_regular(params["date"]), 

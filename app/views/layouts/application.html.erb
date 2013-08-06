@@ -48,7 +48,7 @@
 		    })
 		});
 		$(document).ready(function() {
-			if($("#region_graph_reg") != []) {
+			if($("#region_graph_reg").length != 0) {
 				$('#region_graph_reg').highcharts({
 		            title: {
 		                text: 'Fuel Price Trends',
@@ -106,7 +106,7 @@
 		            }]
 		        });
 			}
-			if($("#state_graph_reg") != []) {
+			if($("#state_graph_reg").length != 0) {
 				$('#state_graph_reg').highcharts({
 		            title: {
 		                text: 'Fuel Price Trends',
@@ -158,7 +158,7 @@
 		            }]
 		        });
 			}
-			if($("#city_graph_reg") != []) {
+			if($("#city_graph_reg").length != 0) {
 				$('#city_graph_reg').highcharts({
 		            title: {
 		                text: 'Fuel Price Trends',
@@ -216,7 +216,7 @@
 		            }]
 		        });
 			}
-			if($("#region_graph_die") != []) {
+			if($("#region_graph_die").length != 0) {
 				$('#region_graph_die').highcharts({
 		            title: {
 		                text: 'Fuel Price Trends',
@@ -271,6 +271,86 @@
 		            }, {
 		                name: 'California',
 		                data: <%= raw DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| x.california.nil? ? 0.0 : x.california }.to_s %>
+		            }]
+		        });
+			}
+			if($("#page_view_graph").length != 0) {
+				$('#page_view_graph').highcharts({
+		            title: {
+		                text: 'Page View Trends',
+		                x: -20 //center
+		            },
+		            xAxis: {
+		                categories: <%= raw Stat.select("distinct date(created_at) as created_at").where("message = 'page_view'").collect { |x| x.created_at.to_s }.to_s %>
+		            },
+		            yAxis: {
+		                title: {
+		                    text: 'Hits (#)'
+		                },
+		                plotLines: [{
+		                    value: 0,
+		                    width: 1,
+		                    color: '#808080'
+		                }]
+		            },
+		            legend: {
+		                layout: 'vertical',
+		                align: 'right',
+		                verticalAlign: 'middle',
+		                borderWidth: 0
+		            },
+		            series: [{
+		                name: 'Home - Index',
+		                data: <%= raw Stat.order("created_at").select("count, date(created_at) as created_at").where("controller = :controller and action = :action and message = :message", {controller: "home", action: "index", message: "page_view"}).collect { |x| x.count }.to_s %>
+		            }, {
+		                name: 'About - Index',
+		                data: <%= raw Stat.order("created_at").select("count, date(created_at) as created_at").where("controller = :controller and action = :action and message = :message", {controller: "about", action: "index", message: "page_view"}).collect { |x| x.count }.to_s %>
+		            }, {
+		                name: 'Prices - Index',
+		                data: <%= raw Stat.order("created_at").select("count, date(created_at) as created_at").where("controller = :controller and action = :action and message = :message", {controller: "prices", action: "index", message: "page_view"}).collect { |x| x.count }.to_s %>
+		            }, {
+		                name: 'Prices - Trends',
+		                data: <%= raw Stat.order("created_at").select("count, date(created_at) as created_at").where("controller = :controller and action = :action and message = :message", {controller: "prices", action: "trends", message: "page_view"}).collect { |x| x.count }.to_s %>
+		            }, {
+		                name: 'Prices - Weekly Updates',
+		                data: <%= raw Stat.order("created_at").select("count, date(created_at) as created_at").where("controller = :controller and action = :action and message = :message", {controller: "prices", action: "weekly_updates", message: "page_view"}).collect { |x| x.count }.to_s %>
+		            }, {
+		                name: 'Prices - API',
+		                data: <%= raw Stat.order("created_at").select("count, date(created_at) as created_at").where("controller = :controller and action = :action and message = :message", {controller: "prices", action: "api", message: "page_view"}).collect { |x| x.count }.to_s %>
+		            }]
+		        });
+			}
+			if($("#api_graph").length != 0) {
+				$('#api_graph').highcharts({
+		            title: {
+		                text: 'API Trends',
+		                x: -20 //center
+		            },
+		            xAxis: {
+		                categories: <%= raw Stat.select("distinct date(created_at) as created_at").where("message = 'page_view'").collect { |x| x.created_at.to_s }.to_s %>
+		            },
+		            yAxis: {
+		                title: {
+		                    text: 'Hits (#)'
+		                },
+		                plotLines: [{
+		                    value: 0,
+		                    width: 1,
+		                    color: '#808080'
+		                }]
+		            },
+		            legend: {
+		                layout: 'vertical',
+		                align: 'right',
+		                verticalAlign: 'middle',
+		                borderWidth: 0
+		            },
+		            series: [{
+		                name: 'XML',
+		                data: <%= raw Stat.order("created_at").select("count, date(created_at) as created_at").where("controller = :controller and action = :action and message = :message", {controller: "prices", action: "get", message: "api_xml"}).collect { |x| x.count }.to_s %>
+		            }, {
+		                name: 'JSON',
+		                data: <%= raw Stat.order("created_at").select("count, date(created_at) as created_at").where("controller = :controller and action = :action and message = :message", {controller: "prices", action: "get", message: "api_json"}).collect { |x| x.count }.to_s %>
 		            }]
 		        });
 			}

@@ -1,5 +1,7 @@
 class AboutController < ApplicationController
-	def index
+	include StatlyHelper
 
+	def index
+		stat("about", "index", "page_view")
 	end
 end
