@@ -1,21 +1,29 @@
 <div class="hero-unit" style="opacity:.90;">
 	<div class="row-fluid">
 		<h5>Regular Fuel Trends by Region</h5>
-		<div id="region_graph_reg" class="offset1 span10"></div>
+		<div class="offset1 span10">
+			<%= line_chart @us_regular %>
+		</div>
 	</div>
 	<hr/>
-	<div class="row-fluid">
+	<div class="row">
 		<h5>Regular Fuel Trends by State</h5>
-		<div id="state_graph_reg" class="offset1 span10"></div>
+		<div class="offset1 span10">
+			<%= line_chart @us_regular_state %>
+		</div>
 	</div>
 	<hr/>
-	<div class="row-fluid">
+	<div class="row">
 		<h5>Regular Fuel Trends by City</h5>
-		<div id="city_graph_reg" class="offset1 span10"></div>
+		<div class="offset1 span10">
+			<%= line_chart @us_regular_city %>
+		</div>
 	</div>
 	<hr/>
-	<div class="row-fluid">
+	<div class="row">
 		<h5>Diesel Fuel Trends by State</h5>
-		<div id="region_graph_die" class="offset1 span10"></div>
+		<div class="offset1 span10">
+			<%= line_chart @us_regular_diesel %>
+		</div>
 	</div>
 </div>

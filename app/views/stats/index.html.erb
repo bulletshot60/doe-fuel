@@ -1,11 +1,15 @@
 <div class="hero-unit" style="opacity:.90;">
 	<div class="row-fluid">
 		<h5>Page View Trends by Page</h5>
-		<div id="page_view_graph" class="offset1 span10"></div>
+		<div class="offset1 span10">
+			<%= line_chart @page_views %>
+		</div>
 	</div>
 	<hr/>
 	<div class="row-fluid">
 		<h5>API Trends by Type</h5>
-		<div id="api_graph" class="offset1 span10"></div>
+		<div class="offset1 span10"
+			<%= line_chart @api_views %>
+		</div>
 	</div>
 </div>
