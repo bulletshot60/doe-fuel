@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 class DieselPrice < ActiveRecord::Base
-  attr_accessible :us_national_average, :east_coast, :new_england, :central_atlantic, :lower_atlantic, :midwest, :gulf_coast, :rocky_mountains, :west_coast, :california
+  attr_accessible :us_national_average, :east_coast, :new_england, :central_atlantic, :lower_atlantic, :midwest, :gulf_coast, :rocky_mountains, :west_coast, :california, :west_coast_less_california
 
   def self.refresh 
   	doc = Nokogiri::XML(open('http://www.eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml'), 'rb')
@@ -29,6 +29,7 @@ class DieselPrice < ActiveRecord::Base
   	  d.gulf_coast = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Gulf\s+Coast/).last.first
   	  d.rocky_mountains = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Rocky\s+Mountain/).last.first
   	  d.west_coast = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+West\s+Coast/).last.first
+      d.west_coast_less_california = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+West\s+Coast\s+less\s+California/).last.first
   	  d.california = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+California/).last.first
   	  d.effective_date = date
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806121333) do
+ActiveRecord::Schema.define(:version => 20130820194837) do
 
   create_table "diesel_prices", :force => true do |t|
     t.float    "us_national_average"
@@ -25,8 +25,9 @@ ActiveRecord::Schema.define(:version => 20130806121333) do
     t.float    "west_coast"
     t.float    "california"
     t.date     "effective_date"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.float    "west_coast_less_california"
   end
 
   create_table "regular_prices", :force => true do |t|
@@ -41,8 +42,8 @@ ActiveRecord::Schema.define(:version => 20130806121333) do
     t.float    "west_coast"
     t.float    "california"
     t.date     "effective_date"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.float    "colorado"
     t.float    "florida"
     t.float    "massachusetts"
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20130806121333) do
     t.float    "new_york_city"
     t.float    "san_francisco"
     t.float    "seattle"
+    t.float    "west_coast_less_california"
   end
 
   create_table "stats", :force => true do |t|

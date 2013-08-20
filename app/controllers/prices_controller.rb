@@ -44,6 +44,9 @@ class PricesController < ApplicationController
         }, {
             name: "California",
             data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.california.nil? ? 0.0 : x.california ] }
+        }, {
+            name: "West Coast less California",
+            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast_less_california.nil? ? 0.0 : x.west_coast_less_california ] }
         }]
 
         @us_regular_city = [{
@@ -134,6 +137,9 @@ class PricesController < ApplicationController
         }, {
             name: 'California',
             data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.california.nil? ? 0.0 : x.california ] }
+        }, {
+            name: "West Coast less California",
+            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast_less_california.nil? ? 0.0 : x.west_coast_less_california ] }
         }]
 	end
 
