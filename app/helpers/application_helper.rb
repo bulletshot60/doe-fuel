@@ -252,6 +252,10 @@ module ApplicationHelper
                                                                 		<td style=\"width: 80%\" colspan=\"2\">West Coast</td>
                                                                 		<td style=\"width: 20%\">#{regular.west_coast}</td>
                                                                 	</tr>
+																	<tr>
+                                                                		<td style=\"width: 80%\" colspan=\"2\">West Coast less California</td>
+                                                                		<td style=\"width: 20%\">#{regular.west_coast_less_california}</td>
+                                                                	</tr>
                                                                 	<tr>
                                                                 		<td style=\"width: 10%\"></td>
                                                                 		<td style=\"width: 70%\">California</td>
@@ -379,6 +383,10 @@ module ApplicationHelper
                                                                 	<tr>
                                                                 		<td style=\"width: 80%\" colspan=\"2\">West Coast</td>
                                                                 		<td style=\"width: 20%\">#{diesel.west_coast}</td>
+                                                                	</tr>
+                                                                	<tr>
+                                                                		<td style=\"width: 80%\" colspan=\"2\">West Coast less California</td>
+                                                                		<td style=\"width: 20%\">#{diesel.west_coast_less_california}</td>
                                                                 	</tr>
                                                                 	<tr>
                                                                 		<td style=\"width: 10%\"></td>
