@@ -49,6 +49,21 @@ class PricesController < ApplicationController
             data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast_less_california.nil? ? 0.0 : x.west_coast_less_california ] }
         }]
 
+        @us_regular_min = 0.00
+        @us_regular_max = 0.00
+        @us_regular.each { |prices|
+            prices.each { |price_array|
+                if @us_regular_min == 0.00 || price_array[1] < @us_regular_min
+                    @us_regular_min = price_array[1]
+                end
+                if @us_regular_max == 0.00 || price_array[1] > @us_regular_max
+                    @us_regular_max = price_array[1]
+                end
+            }
+        }
+        @us_regular_min -= 0.10
+        @us_regular_max += 0.10
+
         @us_regular_city = [{
             name: 'Colorado',
             data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.us_national_average.nil? ? 0.0 : x.us_national_average ] }
@@ -74,6 +89,21 @@ class PricesController < ApplicationController
             name: 'Washington',
             data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.rocky_mountains.nil? ? 0.0 : x.rocky_mountains ] }
         }]
+
+        @us_regular_city_min = 0.00
+        @us_regular_city_max = 0.00
+        @us_regular_city.each { |prices|
+            prices.each { |price_array|
+                if @us_regular_city_min == 0.00 || price_array[1] < @us_regular_city_min
+                    @us_regular_city_min = price_array[1]
+                end
+                if @us_regular_city_max == 0.00 || price_array[1] > @us_regular_city_max
+                    @us_regular_city_max = price_array[1]
+                end
+            }
+        }
+        @us_regular_city_min -= 0.10
+        @us_regular_city_max += 0.10
 
         @us_regular_state = [{
             name: 'Boston',
@@ -106,6 +136,21 @@ class PricesController < ApplicationController
             name: 'Seattle',
             data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.seattle.nil? ? 0.0 : x.seattle ] }
         }]
+
+        @us_regular_state_min = 0.00
+        @us_regular_state_max = 0.00
+        @us_regular_state.each { |prices|
+            prices.each { |price_array|
+                if @us_regular_state_min == 0.00 || price_array[1] < @us_regular_state_min
+                    @us_regular_state_min = price_array[1]
+                end
+                if @us_regular_state_max == 0.00 || price_array[1] > @us_regular_state_max
+                    @us_regular_state_max = price_array[1]
+                end
+            }
+        }
+        @us_regular_state_min -= 0.10
+        @us_regular_state_max += 0.10
 
         @us_diesel = [{
             name: 'US National Average',
@@ -141,6 +186,21 @@ class PricesController < ApplicationController
             name: "West Coast less California",
             data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast_less_california.nil? ? 0.0 : x.west_coast_less_california ] }
         }]
+
+        @us_diesel_min = 0.00
+        @us_diesel_max = 0.00
+        @us_diesel.each { |prices|
+            prices.each { |price_array|
+                if @us_diesel_min == 0.00 || price_array[1] < @us_diesel_min
+                    @us_regular_min = price_array[1]
+                end
+                if @us_diesel_max == 0.00 || price_array[1] > @us_diesel_max
+                    @us_diesel_max = price_array[1]
+                end
+            }
+        }
+        @us_diesel_min -= 0.10
+        @us_diesel_max += 0.10
 	end
 
 	def api

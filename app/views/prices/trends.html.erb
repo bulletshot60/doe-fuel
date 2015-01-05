@@ -2,28 +2,28 @@
 	<div class="row-fluid">
 		<h5>Regular Fuel Trends by Region</h5>
 		<div class="offset1 span10">
-			<%= line_chart @us_regular %>
+			<%= line_chart @us_regular, min: @us_regular_min, max: @us_regular_max %>
 		</div>
 	</div>
 	<hr/>
 	<div class="row-fluid">
 		<h5>Regular Fuel Trends by State</h5>
 		<div class="offset1 span10">
-			<%= line_chart @us_regular_state %>
+			<%= line_chart @us_regular_state, min: @us_regular_state_min, max: @us_regular_state_max %>
 		</div>
 	</div>
 	<hr/>
 	<div class="row-fluid">
 		<h5>Regular Fuel Trends by City</h5>
 		<div class="offset1 span10">
-			<%= line_chart @us_regular_city %>
+			<%= line_chart @us_regular_city, min: @us_regular_city_min, max: @us_regular_city_max %>
 		</div>
 	</div>
 	<hr/>
 	<div class="row-fluid">
 		<h5>Diesel Fuel Trends by State</h5>
 		<div class="offset1 span10">
-			<%= line_chart @us_diesel %>
+			<%= line_chart @us_diesel, min: @us_diesel_min, max: @us_diesel_max %>
 		</div>
 	</div>
 </div>
