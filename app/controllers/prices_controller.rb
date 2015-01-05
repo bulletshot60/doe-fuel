@@ -192,7 +192,7 @@ class PricesController < ApplicationController
         @us_diesel.each { |prices|
             prices[:data].each { |price_array|
                 if @us_diesel_min == 0.00 || price_array[1] < @us_diesel_min
-                    @us_regular_min = price_array[1]
+                    @us_diesel_min = price_array[1]
                 end
                 if @us_diesel_max == 0.00 || price_array[1] > @us_diesel_max
                     @us_diesel_max = price_array[1]
