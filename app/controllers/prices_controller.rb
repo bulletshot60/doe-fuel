@@ -93,7 +93,7 @@ class PricesController < ApplicationController
         @us_regular_city_min = 0.00
         @us_regular_city_max = 0.00
         @us_regular_city.each { |prices|
-            prices.each { |price_array|
+            prices[:data].each { |price_array|
                 if @us_regular_city_min == 0.00 || price_array[1] < @us_regular_city_min
                     @us_regular_city_min = price_array[1]
                 end
@@ -140,7 +140,7 @@ class PricesController < ApplicationController
         @us_regular_state_min = 0.00
         @us_regular_state_max = 0.00
         @us_regular_state.each { |prices|
-            prices.each { |price_array|
+            prices[:data].each { |price_array|
                 if @us_regular_state_min == 0.00 || price_array[1] < @us_regular_state_min
                     @us_regular_state_min = price_array[1]
                 end
@@ -190,7 +190,7 @@ class PricesController < ApplicationController
         @us_diesel_min = 0.00
         @us_diesel_max = 0.00
         @us_diesel.each { |prices|
-            prices.each { |price_array|
+            prices[:data].each { |price_array|
                 if @us_diesel_min == 0.00 || price_array[1] < @us_diesel_min
                     @us_regular_min = price_array[1]
                 end
