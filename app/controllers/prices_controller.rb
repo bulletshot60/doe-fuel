@@ -52,7 +52,7 @@ class PricesController < ApplicationController
         @us_regular_min = 0.00
         @us_regular_max = 0.00
         @us_regular.each { |prices|
-            prices.each { |price_array|
+            prices[:data].each { |price_array|
                 if @us_regular_min == 0.00 || price_array[1] < @us_regular_min
                     @us_regular_min = price_array[1]
                 end
