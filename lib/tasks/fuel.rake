@@ -8,10 +8,7 @@ namespace :fuel do
     puts "Diesel Updated?: #{d1}"
     d2 = RegularPrice.refresh
     puts "Regular Updated?: #{d2}"
-    if d1 && d2
-    	send_update(RegularPrice.order("effective_date").last, DieselPrice.order("effective_date").last)
-    end
-
+    
     Stat.where("created_at < :drop_off", {drop_off: 12.days.ago}).delete_all
 
     stat("home", "index", "page_view")
