@@ -12,6 +12,7 @@ gem 'gibbon'
 gem 'nestful'
 gem 'nokogiri'
 gem 'pg'
+gem 'airbrake', '~> 6.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
