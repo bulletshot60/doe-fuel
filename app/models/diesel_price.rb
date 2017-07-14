@@ -5,7 +5,8 @@ class DieselPrice < ActiveRecord::Base
   attr_accessible :us_national_average, :east_coast, :new_england, :central_atlantic, :lower_atlantic, :midwest, :gulf_coast, :rocky_mountains, :west_coast, :california, :west_coast_less_california
 
   def self.refresh 
-  	doc = Nokogiri::XML(open('http://www.eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml'), 'rb')
+  	doc = Nokogiri::XML(open('https://www.eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml
+'), 'rb')
   	date = ''
   	doc.xpath('//rss/channel/item/title').each do |x|
   	  date = Date.strptime(x.content.scan(/([0-9\/]+)/).first.first, '%m/%d/%y')
