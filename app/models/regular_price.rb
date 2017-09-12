@@ -45,7 +45,7 @@ class RegularPrice < ActiveRecord::Base
       d.denver = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Denver/).first.first
       d.houston = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Houston/).first.first
       d.los_angeles = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Los\s+Angeles/).first.first
-      
+      d.miami = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Miami/).first.first
       d.new_york_city = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+New\s+York\s+City/).first.first
       d.san_francisco = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+San\s+Francisco/).first.first
       d.seattle = prices.scan(/([0-9]+\.[0-9]+)\s+\.+\s+Seattle/).first.first
