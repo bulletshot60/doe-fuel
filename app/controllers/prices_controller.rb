@@ -207,10 +207,6 @@ class PricesController < ApplicationController
 		stat("prices", "api", "page_view")
 	end
 
-	def weekly_updates
-		stat("prices", "weekly_updates", "page_view")
-	end
-
 	def success
 
 	end
