@@ -15,7 +15,7 @@ common: &common
 development:
   <<: *common
   database: doe_fuel
-  
+
 test:
   <<: *common
   database: doe_fuel_test

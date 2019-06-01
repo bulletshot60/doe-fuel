@@ -2,8 +2,6 @@ require 'nokogiri'
 require 'open-uri'
 
 class DieselPrice < ActiveRecord::Base
-  attr_accessible :us_national_average, :east_coast, :new_england, :central_atlantic, :lower_atlantic, :midwest, :gulf_coast, :rocky_mountains, :west_coast, :california, :west_coast_less_california
-
   def self.refresh 
   	doc = Nokogiri::XML(open('https://www.eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml'), 'rb')
   	date = ''

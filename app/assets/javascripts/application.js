@@ -21,4 +21,6 @@
 //= require jquery.tagsinput
 //= require jquery.placeholder
 //= require jquery.stacktable
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .

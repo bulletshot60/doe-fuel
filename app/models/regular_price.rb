@@ -2,8 +2,6 @@ require 'nokogiri'
 require 'open-uri'
 
 class RegularPrice < ActiveRecord::Base
-  attr_accessible :us_national_average, :east_coast, :new_england, :central_atlantic, :lower_atlantic, :midwest, :gulf_coast, :rocky_mountains, :west_coast, :california, :colorado, :florida, :massachusetts, :minnesota, :new_york, :ohio, :texas, :washington, :boston, :chicago, :cleveland, :denver, :houston, :los_angeles, :miami, :new_york_city, :san_francisco, :seattle, :west_coast_less_california
-
   def self.refresh 
   	doc = Nokogiri::XML(open('https://www.eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml'), 'rb')
   	date = ''
