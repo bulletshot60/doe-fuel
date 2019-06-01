@@ -12,6 +12,8 @@ gem 'gibbon'
 gem 'nestful'
 gem 'nokogiri'
 gem 'pg'
+gem 'bootsnap'
+gem 'listen'
 gem 'airbrake', '~> 9.2.2'
 
 # Gems used only for assets and not required
