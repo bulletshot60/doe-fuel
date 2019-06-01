@@ -16,37 +16,37 @@ class PricesController < ApplicationController
 
 		@us_regular = [{
             name: "US National Average",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.us_national_average.nil? ? 0.0 : x.us_national_average ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.us_national_average.nil? ? 0.0 : x.us_national_average ] }
         }, {
             name: "East Coast",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.east_coast.nil? ? 0.0 : x.east_coast ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.east_coast.nil? ? 0.0 : x.east_coast ] }
         }, {
             name: "New England",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.new_england.nil? ? 0.0 : x.new_england ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.new_england.nil? ? 0.0 : x.new_england ] }
         }, {
             name: "Central Atlantic",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.central_atlantic.nil? ? 0.0 : x.central_atlantic ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.central_atlantic.nil? ? 0.0 : x.central_atlantic ] }
         }, {
             name: "Lower Atlantic",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.lower_atlantic.nil? ? 0.0 : x.lower_atlantic ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.lower_atlantic.nil? ? 0.0 : x.lower_atlantic ] }
         }, {
             name: "Midwest",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.midwest.nil? ? 0.0 : x.midwest ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.midwest.nil? ? 0.0 : x.midwest ] }
         }, {
             name: "Gulf Coast",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.gulf_coast.nil? ? 0.0 : x.gulf_coast ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.gulf_coast.nil? ? 0.0 : x.gulf_coast ] }
         }, {
             name: "Rocky Mountains",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.rocky_mountains.nil? ? 0.0 : x.rocky_mountains ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.rocky_mountains.nil? ? 0.0 : x.rocky_mountains ] }
         }, {
             name: "West Coast",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast.nil? ? 0.0 : x.west_coast ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast.nil? ? 0.0 : x.west_coast ] }
         }, {
             name: "California",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.california.nil? ? 0.0 : x.california ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.california.nil? ? 0.0 : x.california ] }
         }, {
             name: "West Coast less California",
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast_less_california.nil? ? 0.0 : x.west_coast_less_california ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast_less_california.nil? ? 0.0 : x.west_coast_less_california ] }
         }]
 
         @us_regular_min = 0.00
@@ -66,28 +66,28 @@ class PricesController < ApplicationController
 
         @us_regular_city = [{
             name: 'Colorado',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.us_national_average.nil? ? 0.0 : x.us_national_average ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.us_national_average.nil? ? 0.0 : x.us_national_average ] }
         }, {
             name: 'Florida',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.east_coast.nil? ? 0.0 : x.east_coast ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.east_coast.nil? ? 0.0 : x.east_coast ] }
         }, {
             name: 'Massachusetts',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.new_england.nil? ? 0.0 : x.new_england ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.new_england.nil? ? 0.0 : x.new_england ] }
         }, {
             name: 'Minnesota',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.central_atlantic.nil? ? 0.0 : x.central_atlantic ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.central_atlantic.nil? ? 0.0 : x.central_atlantic ] }
         }, {
             name: 'New York',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.lower_atlantic.nil? ? 0.0 : x.lower_atlantic ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.lower_atlantic.nil? ? 0.0 : x.lower_atlantic ] }
         }, {
             name: 'Ohio',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.midwest.nil? ? 0.0 : x.midwest ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.midwest.nil? ? 0.0 : x.midwest ] }
         }, {
             name: 'Texas',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.gulf_coast.nil? ? 0.0 : x.gulf_coast ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.gulf_coast.nil? ? 0.0 : x.gulf_coast ] }
         }, {
             name: 'Washington',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.rocky_mountains.nil? ? 0.0 : x.rocky_mountains ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.rocky_mountains.nil? ? 0.0 : x.rocky_mountains ] }
         }]
 
         @us_regular_city_min = 0.00
@@ -107,34 +107,34 @@ class PricesController < ApplicationController
 
         @us_regular_state = [{
             name: 'Boston',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.boston.nil? ? 0.0 : x.boston ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.boston.nil? ? 0.0 : x.boston ] }
         }, {
             name: 'Chicago',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.chicago.nil? ? 0.0 : x.chicago ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.chicago.nil? ? 0.0 : x.chicago ] }
         }, {
             name: 'Cleveland',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.cleveland.nil? ? 0.0 : x.cleveland ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.cleveland.nil? ? 0.0 : x.cleveland ] }
         }, {
             name: 'Denver',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.denver.nil? ? 0.0 : x.denver ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.denver.nil? ? 0.0 : x.denver ] }
         }, {
             name: 'Houston',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.houston.nil? ? 0.0 : x.houston ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.houston.nil? ? 0.0 : x.houston ] }
         }, {
             name: 'Los Angeles',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.los_angeles.nil? ? 0.0 : x.los_angeles ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.los_angeles.nil? ? 0.0 : x.los_angeles ] }
         }, {
             name: 'Miami',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.miami.nil? ? 0.0 : x.miami ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.miami.nil? ? 0.0 : x.miami ] }
         }, {
             name: 'New York City',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.new_york_city.nil? ? 0.0 : x.new_york_city ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.new_york_city.nil? ? 0.0 : x.new_york_city ] }
         }, {
             name: 'San Francisco',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.san_francisco.nil? ? 0.0 : x.san_francisco ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.san_francisco.nil? ? 0.0 : x.san_francisco ] }
         }, {
             name: 'Seattle',
-            data: RegularPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.seattle.nil? ? 0.0 : x.seattle ] }
+            data: RegularPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.seattle.nil? ? 0.0 : x.seattle ] }
         }]
 
         @us_regular_state_min = 0.00
@@ -154,37 +154,37 @@ class PricesController < ApplicationController
 
         @us_diesel = [{
             name: 'US National Average',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.us_national_average.nil? ? 0.0 : x.us_national_average ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.us_national_average.nil? ? 0.0 : x.us_national_average ] }
         }, {
             name: 'East Coast',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.east_coast.nil? ? 0.0 : x.east_coast ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.east_coast.nil? ? 0.0 : x.east_coast ] }
         }, {
             name: 'New England',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.new_england.nil? ? 0.0 : x.new_england ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.new_england.nil? ? 0.0 : x.new_england ] }
         }, {
             name: 'Central Atlantic',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.central_atlantic.nil? ? 0.0 : x.central_atlantic ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.central_atlantic.nil? ? 0.0 : x.central_atlantic ] }
         }, {
             name: 'Lower Atlantic',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.lower_atlantic.nil? ? 0.0 : x.lower_atlantic ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.lower_atlantic.nil? ? 0.0 : x.lower_atlantic ] }
         }, {
             name: 'Midwest',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.midwest.nil? ? 0.0 : x.midwest ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.midwest.nil? ? 0.0 : x.midwest ] }
         }, {
             name: 'Gulf Coast',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.gulf_coast.nil? ? 0.0 : x.gulf_coast ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.gulf_coast.nil? ? 0.0 : x.gulf_coast ] }
         }, {
             name: 'Rocky Mountains',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.rocky_mountains.nil? ? 0.0 : x.rocky_mountains ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.rocky_mountains.nil? ? 0.0 : x.rocky_mountains ] }
         }, {
             name: 'West Coast',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast.nil? ? 0.0 : x.west_coast ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast.nil? ? 0.0 : x.west_coast ] }
         }, {
             name: 'California',
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.california.nil? ? 0.0 : x.california ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.california.nil? ? 0.0 : x.california ] }
         }, {
             name: "West Coast less California",
-            data: DieselPrice.find(:all, :order => "effective_date desc", :limit => 12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast_less_california.nil? ? 0.0 : x.west_coast_less_california ] }
+            data: DieselPrice.order("effective_date desc").limit(12).reverse.collect { |x| [ x.effective_date.to_s, x.west_coast_less_california.nil? ? 0.0 : x.west_coast_less_california ] }
         }]
 
         @us_diesel_min = 0.00
