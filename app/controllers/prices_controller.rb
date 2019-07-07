@@ -215,38 +215,30 @@ class PricesController < ApplicationController
 		respond_to do |format|
 			format.html { redirect_to :index }
 			format.xml { 
-				stat("prices", "get", "api_xml")
-				begin
-				    if params[:type] == nil
-					render :xml => { 
-					    :regular => get_regular(params["date"]), 
-					    :diesel => get_diesel(params["date"]) 
-					}.to_xml
-				    elsif params[:type] == "diesel"
-					render :xml => get_diesel(params["date"]).to_xml
-				    elsif params[:type] == "regular"
-					render :xml => get_regular(params["date"]).to_xml
-				    end
-				rescue 
-					render :bad_request
-				end
+			    stat("prices", "get", "api_xml")
+			    if params[:type] == nil
+				render :xml => { 
+				    :regular => get_regular(params["date"]).to_xml, 
+				    :diesel => get_diesel(params["date"]).to_xml 
+				}.to_xml
+			    elsif params[:type] == "diesel"
+				render :xml => get_diesel(params["date"]).to_xml
+			    elsif params[:type] == "regular"
+				render :xml => get_regular(params["date"]).to_xml
+			    end
 			}
 			format.json { 
-				stat("prices", "get", "api_json")
-                		begin
-				    if params[:type] == nil
-					render :json => { 
-					    :regular => get_regular(params["date"]), 
-					    :diesel => get_diesel(params["date"]) 
-					}.to_json
-				    elsif params[:type] == "diesel"
-					render :json => get_diesel(params["date"]).to_json
-				    elsif params[:type] == "regular"
-					render :json => get_regular(params["date"]).to_json
-				    end
-				rescue
-					render :bad_request
-				end
+			    stat("prices", "get", "api_json")
+			    if params[:type] == nil
+				render :json => { 
+				    :regular => get_regular(params["date"]), 
+				    :diesel => get_diesel(params["date"]) 
+				}.to_json
+			    elsif params[:type] == "diesel"
+				render :json => get_diesel(params["date"]).to_json
+			    elsif params[:type] == "regular"
+				render :json => get_regular(params["date"]).to_json
+			    end
 			}
 		end
 	end
